@@ -1,0 +1,42 @@
+
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Image</th>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Quatity</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let list of products">
+      <td>{{list.product_id}}</td>
+      <td><img src="{{list.product_img}}" class="img-thumbnail" style="height:100px;" /></td>
+      <td>{{list.product_name}}</td>
+      <td>${{list.product_price}}</td>
+      <td>
+        {{list.product_quality}}
+        <button class="btn btn-success btn plus" (click)="add(list.product_id)"><i
+            class="fas fa-plus"></i></button>&nbsp;<button class="btn btn-danger btn-xs minus"
+          (click)="del(list.product_id)"><i class="fas fa-minus"></i></button></td>
+      <td><button class="btn btn-primary btn-sm" (click)="getpopup(list)">About the Product</button> &nbsp;
+      </td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td>Total Price</td>
+      <td colspan="6" class="text-right">{{total | currency: 'CAD' }}</td>
+    </tr>
+
+  </tfoot>
+</table>
+
+<app-productdetails [list]="selectedProduct"></app-productdetails>
+
+<a routerLink="/orderpage"class="btn btn-primary"> Order Now </a>
+
+
