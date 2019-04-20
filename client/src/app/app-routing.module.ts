@@ -6,6 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ServicesComponent } from './pages/services/services.component';
+import { ProductComponent } from './pages/product/product.component';
 import {ProductlistComponent} from './pages/productlist/productlist.component';
 import { OrderpageComponent } from './pages/orderpage/orderpage.component';
 import { OrderdetailsComponent } from './pages/orderdetails/orderdetails.component';
@@ -21,8 +22,8 @@ import { AuthGuard } from './guards/auth.guard';
 const routes: Routes = [
   {path: 'home', component: HomeComponent, data: {title: 'Home'}},
   {path: 'about', component: AboutComponent, data: {title: 'About'}},
-  {path: 'productlist', component: ProductlistComponent, data: {title: 'Products'}},
-
+  {path: 'productlist', component: ProductlistComponent, data: {title: 'ProductsList'}},
+  {path: 'product', component: ProductComponent, data: {title: 'Products'}},
   {path: 'services', component: ServicesComponent, data: {title: 'Services'}},
   {path: 'contact', component: ContactComponent, data: {title: 'Contact'}},
   {path: 'orderpage', component: OrderpageComponent, data: {title: 'OrderPage'}},
